@@ -1,14 +1,28 @@
 {
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch Extension",
-			"type": "extensionHost",
+			"name": "Html5",
+			"type": "chrome",
 			"request": "launch",
-			"runtimeExecutable": "${execPath}",
-			"args": ["--extensionDevelopmentPath=${workspaceRoot}" ],
-			"stopOnEntry": false,
-			"preLaunchTask": "Build"
+			"file": "${workspaceRoot}/build/html5/index.html",
+			"webRoot": "${workspaceRoot}/build/html5/",
+			"preLaunchTask": "Html5 (debug)"
+		},
+		{
+            "name": "Heaps",
+            "request": "launch",
+            "type": "hl",
+            "program": "${workspaceFolder}/build/heaps/hl/Main.hl",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Heaps"
+        },
+		{
+			"name": "Raylib",
+			"type": "hxcpp",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/raylib/Main-debug.exe",
+            "preLaunchTask": "Raylib"
 		}
 	]
 }

@@ -1,22 +1,14 @@
-import vscode.ExtensionContext;
+package ;
 
-class Main
-{
-	var context : ExtensionContext;
+import haxe.ui.HaxeUIApp;
 
-	public function new (ctx)
-	{
-		context = ctx;
+class Main {
+    public static function main() {
+        var app = new HaxeUIApp();
+        app.ready(function() {
+            app.addComponent(new MainView());
 
-		// Setup commands
-		new commands.Show(context);
-		new commands.InitProject(context);
-	}
-
-	@:keep
-	@:expose("activate")
-	public static function main (context:ExtensionContext) : Void
-	{
-		new Main(context);
-	}
+            app.start();
+        });
+    }
 }
