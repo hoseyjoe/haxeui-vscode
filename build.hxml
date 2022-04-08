@@ -12,9 +12,9 @@
 
 -lib hxnodejs
 -lib vscode
--lib jstack
+#-lib jstack
 -lib compiletime
--D JSTACK_MAIN=Main.main
+#-D JSTACK_MAIN=Main.main
 -js bin/main.js
 -debug
 Main

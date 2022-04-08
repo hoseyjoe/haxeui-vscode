@@ -21,7 +21,7 @@ class InitProject
 	**/
 	function run () : Void
 	{
-		var workspaceRoot = Vscode.workspace.rootPath;
+		var workspaceRoot = Vscode.workspace.workspaceFolders[0].uri.path;
 		if (workspaceRoot == null)
 		{
 			Vscode.window.showErrorMessage("You must have a folder open to init a HaxeUI project");

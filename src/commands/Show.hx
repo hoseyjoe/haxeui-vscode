@@ -40,7 +40,7 @@ class Show
 			}
 		}
 
-		return 'Error: couldn\'t find document for uri "$uri"';
+		return 'Error: couldn\'t find document for uri "${uri.path}"';
 	}
 
 	function makeHtmlPage (data:String) : String

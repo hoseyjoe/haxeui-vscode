@@ -4,7 +4,7 @@
 	"problemMatcher": "$haxe",
 	"tasks": [
 		{
-			"taskName": "Build",
+			"label": "Build",
 			"suppressTaskName": true,
 			"args": ["build.hxml"]
 		}

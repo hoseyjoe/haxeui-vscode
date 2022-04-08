@@ -4,14 +4,26 @@
 	"problemMatcher": "$haxe",
 	"tasks": [
 		{
-			"taskName": "Html5",
+			"label": "Html5",
 			"suppressTaskName": true,
-			"args": ["-lib", "haxeui-html5", "complete.hxml", "-js", "build/html5/main.js"]
+			"args": [ "html5.hxml"]
 		},
 		{
-			"taskName": "Html5 (debug)",
+			"label": "Html5 (debug)",
 			"suppressTaskName": true,
-			"args": ["-debug", "-lib", "haxeui-html5", "complete.hxml", "-js", "build/html5/main.js"],
+			"args": ["-debug", "html5.hxml"],
+			"isBuildCommand": true
+		},
+		{
+			"label": "Heaps",
+			"suppressTaskName": true,
+			"args": ["-debug", "heaps-hl.hxml"],
+			"isBuildCommand": true
+		},
+		{
+			"label": "Raylib",
+			"suppressTaskName": true,
+			"args": ["-debug", "raylib.hxml"],
 			"isBuildCommand": true
 		}
 	]

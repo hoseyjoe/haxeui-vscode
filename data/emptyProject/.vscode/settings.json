@@ -1,5 +1,5 @@
 {
 	"haxe.displayConfigurations": [
-		["complete.hxml", "-lib", "haxeui-blank"]
+		["completion.hxml", "-lib", "haxeui-blank"]
 	]
 }

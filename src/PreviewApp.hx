@@ -22,7 +22,7 @@ class PreviewApp
 
 	static function onReady (app:HaxeUIApp) : Void
 	{
-		var main:Component = Toolkit.componentFromString(Base64.decode(PreviewUtils.getData()).toString());
+		var main:Component = haxe.ui.RuntimeComponentBuilder.fromString(Base64.decode(PreviewUtils.getData()).toString());
 		app.addComponent(main);
 		app.start();
 	}
