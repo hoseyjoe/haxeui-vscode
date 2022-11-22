@@ -1,4 +1,4 @@
-completion.hxml
+shared.hxml
 -lib haxeui-raylib
 -lib raylib-haxe
 

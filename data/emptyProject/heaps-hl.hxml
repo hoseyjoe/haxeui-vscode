@@ -1,4 +1,4 @@
-completion.hxml
+shared.hxml
 -lib heaps
 -lib hlsdl
 -lib haxeui-heaps
