@@ -4,7 +4,7 @@ import haxe.io.Path;
 import sys.FileSystem;
 import sys.io.File;
 import vscode.ExtensionContext;
-
+using StringTools;
 class InitProject
 {
 	var context : ExtensionContext;
@@ -21,7 +21,7 @@ class InitProject
 	**/
 	function run () : Void
 	{
-		var workspaceRoot = Vscode.workspace.workspaceFolders[0].uri.path;
+		var workspaceRoot = Vscode.workspace.workspaceFolders[0].uri.path.substr(1).replace("/", "\\");
 		if (workspaceRoot == null)
 		{
 			Vscode.window.showErrorMessage("You must have a folder open to init a HaxeUI project");
@@ -29,7 +29,7 @@ class InitProject
 		}
 
 		var initSource = context.asAbsolutePath("./data/emptyProject/");
-
+		Vscode.window.showInformationMessage('workspaceRoot ${workspaceRoot}');
 		if (copyRec(initSource, workspaceRoot, true))
 		{
 			Vscode.window.showErrorMessage("One or more files from the HaxeUI project would overwrite some of your files, so the project creation was stopped, for best result do this in an empty workspace");
@@ -44,11 +44,10 @@ class InitProject
 	function copyRec (inPath:String, outPath:String, dryRun:Bool = false) : Bool
 	{
 		var overwrite = false;
-
 		for (file in FileSystem.readDirectory(inPath))
 		{
 			var fileInPath = Path.join([ inPath, file ]);
-			var fileOutPath = Path.join([ outPath, file ]);
+			var fileOutPath = Path.join([outPath, file ]);
 
 			if (FileSystem.isDirectory(fileInPath))
 			{
